@@ -1,0 +1,24 @@
+﻿<Window x:Class="AGSExtractWPF.MainWindow"
+        Name="windowElement"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:al ="http://schemas.xceed.com/wpf/xaml/toolkit"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AGSExtractWPF"
+        mc:Ignorable="d"
+        Title="AGSExtract" Height="300" Width="640" MinWidth="300" MinHeight="200">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel x:Name="leftPanel" Grid.Column="0">
+            <Button x:Name="openBtn" Content="Open" HorizontalAlignment="Center" VerticalAlignment="Top" Width="75" Margin="0,10,0,0" IsDefault="True" Click="openBtn_Click"/>
+            <Button x:Name="extractBtn" Content="Extract" HorizontalAlignment="Center" VerticalAlignment="Top" Width="75" Margin="0,10,0,0" IsEnabled="False" Click="extractBtn_Click"/>
+            <Button x:Name="checkAllBtn" Content="Check All" HorizontalAlignment="Center" VerticalAlignment="Bottom" Width="76" Margin="0,40,0,0" IsEnabled="True" Click="checkAllBtn_Click"/>
+            <Button x:Name="uncheckAllBtn" Content="Uncheck All" HorizontalAlignment="Center" VerticalAlignment="Bottom" Width="76" Margin="0,10,0,0" IsEnabled="True" Click="uncheckAllBtn_Click"/>
+        </StackPanel>
+        <al:CheckListBox x:Name="checkListBox" Grid.Column="1" ItemSelectionChanged="onItemCheck"/>
+    </Grid>
+</Window>
