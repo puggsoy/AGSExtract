@@ -88,7 +88,7 @@ namespace AGSExtractWPF
 
         private static string decryptText(byte[] enc)
         {
-            byte[] pass = Encoding.Default.GetBytes(ENCPASS);
+            byte[] pass = Encoding.GetEncoding(1252).GetBytes(ENCPASS);
             uint adx = 0;
             byte[] dec = new byte[enc.Length];
 
